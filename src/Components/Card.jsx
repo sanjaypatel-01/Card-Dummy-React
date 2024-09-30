@@ -8,18 +8,21 @@ function Card() {
       name: "Amazon Basics.",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, itaque?",
+        Instock: true
     },
     {
       image:
         "https://images.unsplash.com/photo-1621768216002-5ac171876625?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFwcGxlfGVufDB8fDB8fHww",
       name: "Apple Products.",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      Instock: false
     },
     {
       image:
         "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D",
       name: "Laptop Brands.",
       description: "Lorem ipsum dolor,",
+      Instock: false
     },
   ];
 
@@ -40,6 +43,9 @@ function Card() {
             <p className="text-xs mt-3">
               {elem.description}
             </p>
+            <button className={`py-2 px-2 ${elem.Instock ? 'bg-blue-500' : 'bg-red-500'} rounded text-zinc-100 mt-4 text-xs`}>
+                {elem.Instock ? "In Stock" : "Out Of Stock"}
+            </button>
           </div>
         </div>
       ))}
